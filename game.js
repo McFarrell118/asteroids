@@ -421,6 +421,8 @@ Ship = function () {
     }
     if (KEY_STATUS.space) {
       if (this.delayBeforeBullet <= 0) {
+        // inserting the missing bullet delay found in the git diff commit
+        this.delayBeforeBullet = 10;
         for (var i = 0; i < this.bullets.length; i++) {
           if (!this.bullets[i].visible) {
             SFX.laser();
